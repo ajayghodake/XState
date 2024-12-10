@@ -66,7 +66,7 @@ const LocationSelector = () => {
   useEffect(() => {
     if (selCountry && selState) {
       getCities(selCountry, selState);
-    } else{
+    } else {
       setCity([]);
     }
   }, [selCountry, selState]);
@@ -81,8 +81,9 @@ const LocationSelector = () => {
       }}
     >
       <h1>Select Location</h1>
-      <div style={{ display: "flex", justifyContent: "center", gap: "10px"}}>
-        <select style={{padding: "10px"}}
+      <div style={{ display: "flex", justifyContent: "center", gap: "10px" }}>
+        <select
+          style={{ padding: "10px" }}
           value={selCountry}
           onChange={(e) => {
             setSelCountry(e.target.value);
@@ -100,7 +101,8 @@ const LocationSelector = () => {
           ))}
         </select>
 
-        <select style={{padding: "10px"}}
+        <select
+          style={{ padding: "10px" }}
           value={selState}
           onChange={(e) => setSelState(e.target.value)}
           disabled={!selCountry}
@@ -113,7 +115,8 @@ const LocationSelector = () => {
           ))}
         </select>
 
-        <select style={{padding: "10px"}}
+        <select
+          style={{ padding: "10px" }}
           value={selCity}
           onChange={(e) => setSelCity(e.target.value)}
           disabled={!selCountry || !selState}
@@ -127,18 +130,30 @@ const LocationSelector = () => {
         </select>
       </div>
       {selCity ? (
-        <div style={{ display: "flex", alignItems: "baseline", gap: "8px", margin: "20px" }}>
-        {/* <p style={{ margin: 0 }}>You selected</h3>
-        <h2 style={{ margin: 0 }}>{selCity},</h2>
-        <h3 style={{ margin: 0, opacity: "0.5" }}>
-       
-            {selState}, {selCountry}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "baseline",
+            gap: "8px",
+            margin: "20px",
+          }}
+        >
+          {/* <h3>
+            You selected <span>{selCity}</span>, {selState}, {selCountry}
+          </h3> */}
+          <h3>
+            You selected{" "}
+            <span style={{ fontWeight: "bold", fontSize: "1.2em" }}>
+              {selCity}
+            </span>
+            ,<span style={{ opacity: 0.6 }}> {selState}</span>,
+            <span style={{ opacity: 0.6 }}> {selCountry}</span>
+          </h3>
           
-        </h3> */}
-        <h3>You selected <span>{selCity}</span>, {selState}, {selCountry}</h3>
-      </div>
-      ) : (<></>)}
-      
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };
