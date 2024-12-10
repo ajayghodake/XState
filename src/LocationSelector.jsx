@@ -135,7 +135,7 @@ const LocationSelector = () => {
             {selState}, {selCountry}
           
         </h3> */}
-        <h3>You selected <span>{selCity}</span>, {selState}, {selCountry}</p>
+        <h3>You selected <span>{selCity}</span>, {selState}, {selCountry}</h3>
       </div>
       ) : (<></>)}
       
