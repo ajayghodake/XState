@@ -128,14 +128,14 @@ const LocationSelector = () => {
       </div>
       {selCity ? (
         <div style={{ display: "flex", alignItems: "baseline", gap: "8px", margin: "20px" }}>
-        {/* <h3 style={{ margin: 0 }}>You selected</h3>
+        {/* <p style={{ margin: 0 }}>You selected</h3>
         <h2 style={{ margin: 0 }}>{selCity},</h2>
         <h3 style={{ margin: 0, opacity: "0.5" }}>
        
             {selState}, {selCountry}
           
         </h3> */}
-        <h3>You selected <strong>{selCity}</strong> , {selState}, {selCountry}</h3>
+        <h3>You selected <span>{selCity}</span>, {selState}, {selCountry}</p>
       </div>
       ) : (<></>)}
       
